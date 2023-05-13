@@ -489,3 +489,5 @@ console.log(arr[0].parentNode); // Output: <body>...</body>
 ```
 ### More
 * [HtmlElements](https://www.w3.org/TR/2011/WD-html5-20110525/elements.html)
+# 🔓 DOM cập nhật thuộc tính
+## Thay đổi thuộc tính phần tử
