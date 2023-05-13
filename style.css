@@ -31,3 +31,29 @@ body{
     align-content: center;
     height: 200px;
 }
+#github-ref{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+#icon-github{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+#link-ref{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Consolas';
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+}
