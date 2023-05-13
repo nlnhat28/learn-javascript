@@ -27,28 +27,7 @@ body{
     line-height: 1.5;
     padding: 20px;
 }
-
 .welcome-container{
     align-content: center;
     height: 200px;
-}
-
-#refresh{
-    background-color: green;
-    color:#ffffff;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 30px;
-    font-family: 'Consolas';
-    padding: 10px 20px;
-    border-color: transparent;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-}
-
-#refresh:hover {
-    background-color: lightgreen;
-    color: white;
-    cursor: pointer;
 }
