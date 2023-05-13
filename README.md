@@ -413,12 +413,12 @@ console.log('unix:',date.getTime()); // Output: 959482920000
 * Document Object Model
 * Là mô hình logic, biểu diễn cấu trúc Html
 * Sử dụng DOM để thêm, sửa, xoá các phần tử của Html
-## Thuộc tính `innerHTML` 
+## Thuộc tính innerHTML
 * Có trong mọi phần tử
 * Dùng để thay đổi nội dung phần tử
 ## Đối tượng Document
 * Là đối tượng của DOM
-* Từ `document` có thể truy cập mọi phần tử của DOM
+* Từ **document** có thể truy cập mọi phần tử của DOM
 ```js
 document.body.innerHTML = "Some text";
 ```
