@@ -1,0 +1,54 @@
+@import url("onlinewebfonts.com/c/164a60c2e090248befbcf32fdd5af386?family=LuloCleanOne-Bold");
+
+body{
+    background-color: black;
+    background-image: url('images/background.gif');
+    background-size: cover;
+    background-position: fixed;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    font-family: 'Gotham', sans-serif;
+    font-size: 100px;
+    font-weight: 1000;
+    background: linear-gradient(to bottom, #ffffff, rgb(0, 255, 42));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#welcome-title{
+    font-family: 'Consolas';
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.welcome-container{
+    align-content: center;
+    height: 200px;
+}
+
+#refresh{
+    background-color: green;
+    color:#ffffff;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: 'Consolas';
+    padding: 10px 20px;
+    border-color: transparent;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+#refresh:hover {
+    background-color: lightgreen;
+    color: white;
+    cursor: pointer;
+}
