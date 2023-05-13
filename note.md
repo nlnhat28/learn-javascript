@@ -377,7 +377,7 @@ console.log(date); // Output: Thời gian hiện tại
 let date = new Date(2000,4,28,10,2,00);
 console.log(date); // Output: Sun May 28 2000 10:02:00 GMT+0700
 ```
-⚠️ Js đếm tháng từ 0-11, đếm tuần từ 0-6
+    ⚠️ Js đếm tháng từ 0-11, đếm tuần từ 0-6
 
 * new Date(dateString)
 ```js
