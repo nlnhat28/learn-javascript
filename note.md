@@ -38,7 +38,7 @@ let id = setInterval(() => {
     ? :     --> Toán tử 3 ngôi
     ==      --> So sánh giá trị, không so sánh kiểu 
     ===     --> So sánh giá trị và kiểu
-    typeof   --> Toán tử trả về kiểu 
+    typeof  --> Toán tử trả về kiểu 
 
 ## ++a 
 Cộng trước, return sau
@@ -170,58 +170,58 @@ var s2 = Symbol(); // s2 khác s1
 * Lưu nhiều biến (Như 1 dictionary)
 ```js
 let person = {
-    name: "Link",
-    age: 24,
+    name: "Javascript",
+    birthYear: 1995,
     isGood: true
 }
 ```
 * Truy cập đến thuộc tính
 ```js
 let person = {
-    name: "Link",
-    age: 24,
+    name: "Javascript",
+    birthYear: 1995,
     isGood: true
 }
 console.log(person.name); // Cách 1
-console.log(person['age']); // Cách 2
+console.log(person['birthYear']); // Cách 2
 ```
 * Khởi tạo
 Cố định
 ```js
 let person = {
-    name: "Link",
-    age: 24,
+    name: "Javascript",
+    birthYear: 1995,
     isGood: true
 }
-console.log(`${person.name}, ${person.age}, ${person.isGood}`);
+console.log(`${person.name}, ${person.birthYear}, ${person.isGood}`); // Output: Javascript, 1995, true
 ```
 Dùng hàm tạo
 ```js
-function personCreate(name, age, isGood){
+function personCreate(name, birthYear, isGood){
     this.name   = name,
-    this.age    = age,
+    this.birthYear = birthYear,
     this.isGood = isGood
 }
-let person = new personCreate("Link", 24, true)
-person.name = 'Linh'
-console.log(`${person.name}, ${person.age}, ${person.isGood}`);
+let person = new personCreate("Javascript", 1995, true)
+person.name = 'Js'
+console.log(`${person.name}, ${person.age}, ${person.isGood}`); // Output: Js, 1995, true
 ```
 * Method
 Gọi method từ function bên ngoài
 ```js
 function personCreate(name, birthYear, isGood){
     this.name = name,
-        this.birthYear = birthYear,
-        this.isGood = isGood,
-        this.age = calcAge(birthYear)
+    this.birthYear = birthYear,
+    this.isGood = isGood,
+    this.age = calcAge(birthYear)
 }
 function calcAge(birthYear) {
     const now = new Date();
     return now.getFullYear() - birthYear;
 }
-let person = new personCreate("Link", 2000, true)
-person.name = 'Linh'
-console.log(`Name: ${person.name}\nBirthYear: ${person.birthYear}\nAge: ${person.age}\nisGood: ${person.isGood}`);
+let person = new personCreate("Javascript", 2000, true)
+person.name = 'Js'
+console.log(`Name: ${person.name}\nBirthYear: ${person.birthYear}\nAge: ${person.age}\nisGood: ${person.isGood}`); // 
 ```
 # 🔓 Vòng lặp
 ## for...in
