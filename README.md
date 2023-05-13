@@ -409,3 +409,18 @@ let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
 console.log('unix:',date.getTime()); // Output: 959482920000
 ```
+# 🔓 DOM cơ bản
+* Document Object Model
+* Là mô hình logic, biểu diễn cấu trúc Html
+* Sử dụng DOM để thêm, sửa, xoá các phần tử của Html
+## Đối tượng Document
+* Là đối tượng của DOM
+* Từ `document` có thể truy cập mọi phần tử của DOM
+```js
+<script>
+    document.body.innerHTML = "Some text";
+</script>
+```
+
+
+
