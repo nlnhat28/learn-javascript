@@ -12,10 +12,25 @@
     3. confirm
     4. setTimeout
     5. setInterval
-
-## Example
+# 🔓 SetTimeout, SetInterval
+## setTimeout
+Delay 1 khoảng thời gian, rồi mới thực hiện hàm
 ```js
-setInterval(() => {console.log(Math.random())})
+setTimeout(() => {console.log(Math.random())}, 5000) //delay 5s => thực hiện hàm console.log
+```
+## setInterval, clearInterval
+Lặp lại hàm sau 1 khoảng thời gian
+```js
+setInterval(() => {console.log(Math.random())}, 10000) //delay 5s => thực hiện hàm console.log
+```
+```js
+var i = 0
+let id = setInterval(() => {
+    i++;
+    console.log(Math.random());
+    if (i == 5) {
+        clearInterval(id);
+        console.log("Cleared Interval")}}, 5000);
 ```
 # 🔓 Toán tử
     **      --> Luỹ thừa
@@ -23,27 +38,27 @@ setInterval(() => {console.log(Math.random())})
     ? :     --> Toán tử 3 ngôi
     ==      --> So sánh giá trị, không so sánh kiểu 
     ===     --> So sánh giá trị và kiểu
-    typof   --> Toán tử trả về kiểu 
+    typeof   --> Toán tử trả về kiểu 
 
 ## ++a 
 Cộng trước, return sau
 ```js
 var a = 0;
 var b = ++a;
-console.log(b) // Output : 1
+console.log(b) // Output: 1
 ```
 ## a++ 
 Return trước, cộng sau
 ```js
 var a = 0;
 var b = a++;
-console.log(b) // Output : 0
+console.log(b) // Output: 0
 ```
 ## Example
 ```js
 var a = 0;
 var b = ++a * 2 - a-- * 2; // 1 * 2 - 1 * 2
-console.log(b) // Output : 0
+console.log(b) // Output: 0
 ```
 # 🔓 Biến
 ## var
@@ -55,10 +70,10 @@ console.log(b) // Output : 0
 * Examples
 ```js
 var a = 0;
-console.log(a); // Output : 0
+console.log(a); // Output: 0
 ```
 ```js
-console.log(a); // Output : undefined
+console.log(a); // Output: undefined
 var a = 0;
 ```
 ```js
@@ -67,7 +82,7 @@ if (true)
 {
     var a = 1;
 }
-console.log(a); // Output : 1
+console.log(a); // Output: 1
 ```
 ```js
 var a = 0;
@@ -76,7 +91,7 @@ function process()
     a = 1;
 }
 process();
-console.log(a); // Output : 1
+console.log(a); // Output: 1
 ```
 ```js
 var a = 0;
@@ -85,7 +100,7 @@ function process()
     var a = 1;
 }
 process();
-console.log(a); // Output : 0
+console.log(a); // Output: 0
 ```
 ## let
 * Tính chất
@@ -111,7 +126,7 @@ if (true)
 {
     let a = 1;
 }
-console.log(a); // Output : 0
+console.log(a); // Output: 0
 ```
 ```js
 let a = 0;
@@ -127,7 +142,7 @@ let a = 1; // Error
 * Examples
 ```js
 const a = 0;
-console.log(a); // Output : 0
+console.log(a); // Output: 0
 ```
 ```js
 const a;
@@ -282,33 +297,115 @@ Chạy ngay không cần gán
     console.log(message)
 })("This is IIFE");
 ```
-# 🔓 SetTimeout, SetInterval
-## setTimeout
-Delay 1 khoảng thời gian, rồi mới thực hiện hàm
-```js
-setTimeout(() => {console.log(Math.random())}, 5000) //delay 5s => thực hiện hàm console.log
-```
-## setInterval, clearInterval
-Lặp lại hàm sau 1 khoảng thời gian
-```js
-setInterval(() => {console.log(Math.random())}, 10000) //delay 5s => thực hiện hàm console.log
-```
-```js
-var i = 0
-let id = setInterval(() => {
-    i++;
-    console.log(Math.random());
-    if (i == 5) {
-        clearInterval(id);
-        console.log("Cleared Interval")}}, 5000);
-```
 # 🔓 Mảng
-* Tạo mảng
+## Tạo mảng
 ```js
 let langs1 = ['Html','Css','Javascript'];
 ```
-* Độ dài mảng
+## Độ dài mảng (length)
 ```js
 let langs1 = ['Html','Css','Javascript'];
-console.log(langs1.length);
+console.log(langs1.length); 
+```
+## Gộp 2 mảng (concat)
+```js
+let langs1 = ['Html','Css','Javascript'];
+let langs2 = ['C#','Go','Python'];
+let langs = langs1.concat(langs2)
+console.log(langs); 
+```
+## Duyệt mảng (forEach)
+```js
+let langs1 = ['Html','Css','Javascript'];
+let langs2 = ['C#','Go','Python'];
+let langs = langs1.concat(langs2)
+langs.forEach((item, index) => console.log(item, index));
+```
+## Thêm phần tử vào cuối (push)
+```js
+let langs1 = ['Html','Css','Javascript'];
+langs1.push("ReactJs");
+console.log(langs1); 
+```
+## Thêm phần tử vào đầu (unshift)
+```js
+let langs2 = ['C#','Go','Python'];
+langs2.unshift("Java"); 
+console.log(langs2); 
+```
+## Xoá phần tử cuối (pop)
+```js
+let langs1 = ['Html','Css','Javascript'];
+langs1.pop();
+console.log(langs1); 
+```
+## Xoá phần tử đầu (shift)
+```js
+let langs1 = ['Html','Css','Javascript'];
+langs1.shift();
+console.log(langs1); 
+```
+## Xoá n phần tử từ 1 index (splice)
+```js
+let langs1 = ['Html','Css','Javascript', 'ReactJs', 'AngularJs', 'VueJs'];
+langs1.splice(2, 3);
+console.log(langs1); // Output: ['Html', 'Css', 'VueJs']
+```
+## Nhân bản một mảng (slice)
+```js
+let langs1 = ['Html','Css','Javascript'];
+let langs2 = langs1.slice();
+console.log(langs2); // Output: ['Html','Css','Javascript']
+```
+## Mảng kết hợp
+```js
+let person = [];
+person['name'] = 'Js';
+person['birthYear'] = 1995 
+person.forEach((i) => console.log(i)); // Output: Empty
+console.log(`${person['name']}: ${person['birthYear']}`); // Output: Js: 1995
+```
+# 🔓 Date
+## Khởi tạo
+* new Date()
+```js
+let date = new Date();
+console.log(date); // Output: Thời gian hiện tại
+```
+* new Date(year, month, day, hours, minutes, seconds, milliseconds);
+```js
+let date = new Date(2000,4,28,10,2,00);
+console.log(date); // Output: Sun May 28 2000 10:02:00 GMT+0700
+```
+⚠️ Js đếm tháng từ 0-11, đếm tuần từ 0-6
+
+* new Date(dateString)
+```js
+let date = new Date('May 28, 2000 10:02:00');
+console.log(date); // Output: Sun May 28 2000 10:02:00 GMT+0700
+```
+## Các phương thức
+* Lấy ngày trong tháng (getDate())
+```js
+let date = new Date('May 28, 2000 10:02:00');
+console.log('date:',date);
+console.log('date:',date.getDate());
+```
+* Lấy thứ trong tuần (getDay())
+```js
+let date = new Date('May 28, 2000 10:02:00');
+console.log('date:',date);
+console.log('day:',date.getDay());
+```
+* Lấy năm (getFullYear())
+```js
+let date = new Date('May 28, 2000 10:02:00');
+console.log('date:',date);
+console.log('year:',date.getFullYear());
+```
+* Lấy thời gian Unix (getTime())
+```js
+let date = new Date('May 28, 2000 10:02:00');
+console.log('date:',date);
+console.log('unix:',date.getTime());
 ```
