@@ -7,11 +7,11 @@
 </script>
 ```
 # 🔓 Một số hàm built-in
-    1. alert
-    2. console
-    3. confirm
-    4. setTimeout
-    5. setInterval
+1. alert
+2. console
+3. confirm
+4. setTimeout
+5. setInterval
 # 🔓 SetTimeout, SetInterval
 ## setTimeout
 Delay 1 khoảng thời gian, rồi mới thực hiện hàm
@@ -377,7 +377,7 @@ console.log(date); // Output: Thời gian hiện tại
 let date = new Date(2000,4,28,10,2,00);
 console.log(date); // Output: Sun May 28 2000 10:02:00 GMT+0700
 ```
-    ⚠️ Js đếm tháng từ 0-11, đếm tuần từ 0-6
+> ⚠️ Js đếm tháng từ 0-11, đếm tuần từ 0-6
 
 * new Date(dateString)
 ```js
@@ -413,14 +413,79 @@ console.log('unix:',date.getTime()); // Output: 959482920000
 * Document Object Model
 * Là mô hình logic, biểu diễn cấu trúc Html
 * Sử dụng DOM để thêm, sửa, xoá các phần tử của Html
+## Thuộc tính `innerHTML` 
+* Có trong mọi phần tử
+* Dùng để thay đổi nội dung phần tử
 ## Đối tượng Document
 * Là đối tượng của DOM
 * Từ `document` có thể truy cập mọi phần tử của DOM
 ```js
-<script>
-    document.body.innerHTML = "Some text";
-</script>
+document.body.innerHTML = "Some text";
 ```
-
-
-
+### getElementById
+* Tìm phần tử theo id
+* Trả về HtmlElement
+```js
+document.getElementById('big-title').innerHTML = "JS"
+```
+### getElementsByClassName
+* Tìm phần tử theo ClassName
+* Trả về HtmlCollection
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr.length);
+arr[0].innerHTML = "This is the a element of class";
+```
+### getElementsByTagName
+* Tìm phần tử theo TagName (p, h1,...)
+* Trả về HtmlCollection
+```js
+let arr = document.getElementsByTagName('h1');
+console.log(arr.length);
+arr[0].innerHTML = "This is the a element of tag";
+```
+## Các thuộc tính của HtmlElement trong DOM
+### childNodes
+element.childNodes : trả về mảng các phần tử con
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].childNodes); // Output: NodeList(3) [text, h1#welcome-title, text]
+```
+### firstChild
+element.firstChild : trả về phần tử con đầu tiên
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].firstChild); // Output: #text
+```
+### lastChild
+element.lastChild : trả về phần tử con cuối cùng
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].lastChild); // Output: #text
+```
+### hasChildNodes
+element.hasChildNodes : kiểm tra phần tử có phần tử con hay không
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].hasChildNodes()); // Output: #true
+```
+### nextSibling
+element.nextSibling : trả về phần tử tiếp theo cùng cấp
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].nextSibling); // Output: #text
+```
+### previousSibling
+element.previousSibling : trả về phần tử trước đó cùng cấp
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].previousSibling); // Output: #text
+```
+### parentNode
+element.parentNode : trả về phần tử cha
+```js
+let arr = document.getElementsByClassName('welcome-container');
+console.log(arr[0].parentNode); // Output: <body>...</body>
+```
+### More
+* [HtmlElements](https://www.w3.org/TR/2011/WD-html5-20110525/elements.html)
