@@ -228,10 +228,10 @@ console.log(`Name: ${person.name}\nBirthYear: ${person.birthYear}\nAge: ${person
 Duyệt qua các key (chỉ số) của đối tượng đếm được
 * Example
 ```js
-let dict = {name: "Nhat", age: 23, isLive: true};
+let dict = {name: "Js", birthYear: 1995, isGood: true};
 for (let k in dict)
 {
-    console.log(k); // Output: name, age, isLive 
+    console.log(k); // Output: name, birthYear, isGood 
 }
 ```
 ```js
