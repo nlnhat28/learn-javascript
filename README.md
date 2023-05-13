@@ -491,3 +491,8 @@ console.log(arr[0].parentNode); // Output: <body>...</body>
 * [HtmlElements](https://www.w3.org/TR/2011/WD-html5-20110525/elements.html)
 # 🔓 DOM cập nhật thuộc tính
 ## Thay đổi thuộc tính phần tử
+element.attribute = "new Value"
+```js
+let iconJs = document.getElementById("icon-js");
+iconJs.src = "images/icon-js-2.png";
+```
