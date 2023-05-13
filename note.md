@@ -21,7 +21,7 @@ setTimeout(() => {console.log(Math.random())}, 5000) //delay 5s => thực hiện
 ## setInterval, clearInterval
 Lặp lại hàm sau 1 khoảng thời gian
 ```js
-setInterval(() => {console.log(Math.random())}, 10000) //delay 5s => thực hiện hàm console.log
+setInterval(() => {console.log(Math.random())}, 5000) //mỗi 5s => thực hiện hàm console.log
 ```
 ```js
 var i = 0
