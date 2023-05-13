@@ -489,10 +489,16 @@ console.log(arr[0].parentNode); // Output: <body>...</body>
 ```
 ### More
 * [HtmlElements](https://www.w3.org/TR/2011/WD-html5-20110525/elements.html)
-# 🔓 DOM cập nhật thuộc tính
+# 🔓 DOM thay đổi thuộc tính
 ## Thay đổi thuộc tính phần tử
 element.attribute = "new Value"
 ```js
 let iconJs = document.getElementById("icon-js");
 iconJs.src = "images/icon-js-2.png";
+```
+## Thay đổi style phần tử (Css)
+element.style.... = "newValue"
+```js
+let bigTitle = document.getElementById("big-title");
+bigTitle.style.fontSize = "40px";
 ```
