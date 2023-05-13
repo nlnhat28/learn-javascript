@@ -389,23 +389,23 @@ console.log(date); // Output: Sun May 28 2000 10:02:00 GMT+0700
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
-console.log('date:',date.getDate());
+console.log('date:',date.getDate()); // Output: 28
 ```
 * Lấy thứ trong tuần (getDay())
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
-console.log('day:',date.getDay());
+console.log('day:',date.getDay()); // Output: 0
 ```
 * Lấy năm (getFullYear())
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
-console.log('year:',date.getFullYear());
+console.log('year:',date.getFullYear()); // Output: 2000
 ```
 * Lấy thời gian Unix (getTime())
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
-console.log('unix:',date.getTime());
+console.log('unix:',date.getTime()); // Output: 959482920000
 ```
