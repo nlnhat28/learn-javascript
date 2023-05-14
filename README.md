@@ -413,6 +413,22 @@ console.log('unix:',date.getTime()); // Output: 959482920000
 * Document Object Model
 * Là mô hình logic, biểu diễn cấu trúc Html
 * Sử dụng DOM để thêm, sửa, xoá các phần tử của Html
+## Overview
+* DOM
+* document
+* element.innerHTML
+
+* document.getElementById('id')
+* document.getElementsByClassName('class')
+* document.getElementsByTagName('tag')
+
+* element.hasChildNodes
+* element.childNodes
+* element.parentNode
+* element.lastChild
+* element.firstChild
+* element.nextSibling
+* element.previousSibling
 ## Thuộc tính innerHTML
 * Có trong mọi phần tử
 * Dùng để thay đổi nội dung phần tử
@@ -490,6 +506,9 @@ console.log(arr[0].parentNode); // Output: <body>...</body>
 ### More
 * [HtmlElements](https://www.w3.org/TR/2011/WD-html5-20110525/elements.html)
 # 🔓 DOM thay đổi thuộc tính
+## Overview
+* element.src
+* element.style.
 ## Thay đổi thuộc tính phần tử
 element.attribute = "new Value"
 ```js
@@ -502,3 +521,107 @@ element.style.... = "newValue"
 let bigTitle = document.getElementById("big-title");
 bigTitle.style.fontSize = "40px";
 ```
+# 🔓 DOM thêm, sửa, xoá phần tử
+## Overview
+* document.createElement(tag_name)
+* element.cloneNode()
+* document.createTextNode(text)
+
+* element.appendChild(child)
+* element.insertBefore(newNode, anyNode)
+* element.replaceChild(newNode, oldNode)
+
+* element.removeChild(child)
+* child.parentNode.removeChild(child)
+
+* element.replaceChild(newNode, oldNode)
+* element.querySelector('#id-child')
+## Tạo mới phần tử
+* document.createElement(tag_name)  --> Tạo ra 1 phần tử có thẻ tag_name (a, p, div)
+* element.cloneNode() --> Nhân bản phần tử
+* document.createTextNode(text) --> Tạo phần tử từ văn bản Html
+```js
+var linknode = document.createElement('a')
+linknode.href = 'https://google.com/'
+linknode.innerText = "Google.com"
+```
+## Thêm phần tử vừa tạo vào DOM Html
+* element.appendChild(newNode)  --> Thêm vào cuối danh sách node con
+* element.insertBefore(newNode, node2) --> Thêm vào trước 1 node
+* element.replace(newNode, oldNode)  --> Thay thế node mới vào node cũ
+```js
+var linknode = document.createElement('a');
+linknode.href = 'https://xuanthulab.net/javascript/';
+linknode.target = "blank";
+linknode.innerText = "What's Javascript?";
+linknode.style.display = "flex";
+linknode.style.justifyContent = "center";
+linknode.style.alignItems =  "center";
+linknode.style.fontFamily = 'Consolas';
+linknode.style.fontWeight =  600;
+linknode.style.fontSize =  "18px";
+linknode.style.color =  "white";
+linknode.style.padding =  "10px";
+var bigTitleContainer = document.getElementById("big-title-container");
+bigTitleContainer.appendChild(linknode);
+```
+## Xoá phần tử 
+* Sử dụng `removeNode(child)` để xoá childNode
+```js
+var bigTitleContainer = document.getElementById("big-title-container");
+if (bigTitleContainer.lastChild.id == "what-is-js") {
+    bigTitleContainer.removeChild(bigTitleContainer.lastChild);
+}
+else {
+    var linknode = document.createElement('a');
+    linknode.id = "what-is-js"
+    linknode.href = 'https://xuanthulab.net/javascript/';
+    linknode.target = "blank";
+    linknode.innerText = "What's Javascript?";
+    linknode.style.display = "flex";
+    linknode.style.justifyContent = "center";
+    linknode.style.alignItems = "center";
+    linknode.style.fontFamily = 'Consolas';
+    linknode.style.fontWeight = 600;
+    linknode.style.fontSize = "18px";
+    linknode.style.color = "white";
+    linknode.style.padding = "10px";
+    bigTitleContainer.appendChild(linknode);
+}
+```
+* Sử dụng `child.parentNode.removeChild(child)` để tự xoá node
+```js
+var linkJs = document.getElementById('what-is-js');
+if (linkJs != null){
+    linkJs.parentNode.removeChild(linkJs);
+}
+else{
+    console.log('Not found element!')
+}
+```
+## Thay thế phần tử
+Sử dụng `element.replaceChild(newChild, oldChild)`
+```js
+var bigTitleContainer = document.getElementById("big-title-container");
+var bigTitle = bigTitleContainer.querySelector("#big-title");
+if (bigTitle != null) {
+    var linknode = document.createElement('a');
+    linknode.id = "what-is-js"
+    linknode.href = 'https://xuanthulab.net/javascript/';
+    linknode.target = "blank";
+    linknode.innerText = "What's Javascript?";
+    linknode.style.display = "flex";
+    linknode.style.justifyContent = "center";
+    linknode.style.alignItems = "center";
+    linknode.style.fontFamily = 'Consolas';
+    linknode.style.fontWeight = 600;
+    linknode.style.fontSize = "60px";
+    linknode.style.color = "yellow";
+    linknode.style.padding = "10px";
+    bigTitleContainer.replaceChild(linknode, bigTitle);
+}
+else {
+    console.log('Not found element!')
+}
+```
+

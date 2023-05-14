@@ -7,16 +7,22 @@ body{
     background-position: fixed;
     height: 100vh;
 }
-
+#big-title-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin: 10px;
+}
 #big-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
     font-family: 'Gotham', sans-serif;
+    margin: 0px;
     font-size: 100px;
     font-weight: 1000;
-    background: linear-gradient(to bottom, #ffffff, rgb(0, 255, 42));
+    background: linear-gradient(to bottom, #ffffff, rgb(0, 255, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
