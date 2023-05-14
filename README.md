@@ -307,6 +307,12 @@ Chạy ngay không cần gán
 * array.shift()
 * array.splice(2, 3)
 * array.slice()
+* array.forEach
+* array.map()
+* arrar.filter()
+* array.some()
+* array.every()
+* array.includes()
 ## Tạo mảng
 ```js
 let langs1 = ['Html','Css','Javascript'];
@@ -373,6 +379,170 @@ person['name'] = 'Js';
 person['birthYear'] = 1995 
 person.forEach((i) => console.log(i)); // Output: Empty
 console.log(`${person['name']}: ${person['birthYear']}`); // Output: Js: 1995
+```
+## Duyệt mảng với map()
+Phương thức **map(function())** duyệt qua từng phần tử và thực hiện **function()**
+```js
+var courses = [
+    {
+        id: 00,
+        name: "C#",
+        score: 9
+    },
+    {
+        id: 01,
+        name: "Python",
+        score: 8
+    },
+    {
+        id: 02,
+        name: "Javascript",
+        score: 3
+    },
+    {
+        id: 03,
+        name: "C++",
+        score: 6
+    }
+]
+var newCourses = courses.map((course)=> {
+    var rank;
+    if (course.score < 5) {
+        rank = "bad";
+    }
+    else if (course.score < 8) {
+        rank = "medium";
+    }
+    else {
+        rank = "good";
+    }
+    return {
+        id : course.id,
+        name : course.name,
+        score : course.score,
+        rank : rank
+    }
+});
+console.log(newCourses);
+```
+## Phương thức filter()
+```js
+var courses = [
+    {
+        id: 00,
+        name: "C#",
+        score: 9
+    },
+    {
+        id: 01,
+        name: "Python",
+        score: 8
+    },
+    {
+        id: 02,
+        name: "Javascript",
+        score: 3
+    },
+    {
+        id: 03,
+        name: "C++",
+        score: 6
+    }
+]
+var results = courses.filter((c)=>{
+    return c.score >= 8
+})
+console.log(results)
+```
+## Phương thức some()
+Kiểm tra có phần tử nào thoả mãn điều kiện không
+```js
+var courses = [
+    {
+        id: 00,
+        name: "C#",
+        score: 9
+    },
+    {
+        id: 01,
+        name: "Python",
+        score: 8
+    },
+    {
+        id: 02,
+        name: "Javascript",
+        score: 3
+    },
+    {
+        id: 03,
+        name: "C++",
+        score: 6
+    }
+]
+var result = courses.some((c)=>{
+    return c.score >= 8
+})
+console.log(result) // Output: true
+```
+## Phương thức every()
+Kiểm tra tất cả phần tử có thoả mãn điều kiện không
+```js
+var courses = [
+    {
+        id: 00,
+        name: "C#",
+        score: 9
+    },
+    {
+        id: 01,
+        name: "Python",
+        score: 8
+    },
+    {
+        id: 02,
+        name: "Javascript",
+        score: 3
+    },
+    {
+        id: 03,
+        name: "C++",
+        score: 6
+    }
+]
+var result = courses.every((c)=>{
+    return c.score >= 8
+})
+console.log(result) // Output: false
+```
+## Phương thức every()
+Kiểm tra tất cả phần tử có thoả mãn điều kiện không
+```js
+var courses = ['Html', 'Css', 'Javascript']
+var result = courses.includes('Css');
+console.log(result) // Output: true
+```
+# 🔓 Prototype, Callback
+## Prototype
+Định nghĩa 1 phương thức mới cho object
+```js
+String.prototype.reverse = function(){
+    return this.split('').reverse().join('');
+}
+var s = "Hello";
+console.log(s.reverse()); // Output: olleH
+```
+## Callback
+Gọi hàm trong hàm
+```js
+var fibonacci = function(length){
+    if (length == 1 || length == 2){
+        return 1;
+    }
+    else {
+        return fibonacci(length-1) + fibonacci(length-2);
+    }
+}
+console.log(fibonacci(5))
 ```
 # 🔓 Date
 ## Overview
@@ -639,4 +809,4 @@ else {
     console.log('Not found element!')
 }
 ```
-
+# 🔓 DOM sự kiện
