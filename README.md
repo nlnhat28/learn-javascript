@@ -298,6 +298,15 @@ Chạy ngay không cần gán
 })("This is IIFE");
 ```
 # 🔓 Mảng
+## Overview
+* array.length
+* array.concat(array2)
+* array.push('item')
+* array.unshift('item')
+* array.pop()
+* array.shift()
+* array.splice(2, 3)
+* array.slice()
 ## Tạo mảng
 ```js
 let langs1 = ['Html','Css','Javascript'];
