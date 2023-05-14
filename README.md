@@ -167,7 +167,7 @@ var s1 = Symbol();
 var s2 = Symbol(); // s2 khác s1
 ```
 ## Kiểu đối tượng
-* Lưu nhiều biến (Như 1 dictionary)
+### Lưu nhiều biến (Như 1 dictionary)
 ```js
 let person = {
     name: "Javascript",
@@ -175,7 +175,7 @@ let person = {
     isGood: true
 }
 ```
-* Truy cập đến thuộc tính
+### Truy cập đến thuộc tính
 ```js
 let person = {
     name: "Javascript",
@@ -185,8 +185,8 @@ let person = {
 console.log(person.name); // Cách 1
 console.log(person['birthYear']); // Cách 2
 ```
-* Khởi tạo
-Cố định
+### Khởi tạo
+* Cố định
 ```js
 let person = {
     name: "Javascript",
@@ -195,7 +195,7 @@ let person = {
 }
 console.log(`${person.name}, ${person.birthYear}, ${person.isGood}`); // Output: Javascript, 1995, true
 ```
-Dùng hàm tạo
+* Dùng hàm tạo
 ```js
 function personCreate(name, birthYear, isGood){
     this.name   = name,
@@ -206,7 +206,7 @@ let person = new personCreate("Javascript", 1995, true)
 person.name = 'Js'
 console.log(`${person.name}, ${person.age}, ${person.isGood}`); // Output: Js, 1995, true
 ```
-* Method
+### Method
 Gọi method từ function bên ngoài
 ```js
 function personCreate(name, birthYear, isGood){
