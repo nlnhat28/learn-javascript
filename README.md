@@ -375,6 +375,12 @@ person.forEach((i) => console.log(i)); // Output: Empty
 console.log(`${person['name']}: ${person['birthYear']}`); // Output: Js: 1995
 ```
 # 🔓 Date
+## Overview
+* newDate()
+* getDate()
+* getDay()
+* getFullYear()
+* getTime()
 ## Khởi tạo
 * new Date()
 ```js
