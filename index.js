@@ -1,6 +1,7 @@
 var i = 0;
 var title = 'We don\'t learn from success but from failure!';
 var speed = 100;
+var flagvalidateformValidateForm = true;
 
 function windowLoad(){
     typeWriter();
@@ -39,6 +40,12 @@ function initComponents() {
         event.stopPropagation();
         });
     });
+
+    document.getElementById('name').addEventListener("blur", validDateName);
+
+    document.getElementById('phone').addEventListener("blur", validDatePhone);
+
+    document.getElementById('email').addEventListener("blur", validDateEmail);
 }
 
 function sleep(ms) {
@@ -81,18 +88,27 @@ function closeSubcribeForm(){
     document.getElementById('dialog-subcribe').close();
 }
 function submitSubcribeForm() {
-    var flag = true;
+    flagvalidateform = true;
+    validDateName();
+    validDatePhone();
+    validDateEmail();
+    if (flagvalidateform) {
+        alert("Subscribe successfully");
+    }
+}
+function validDateName() {
     var name = document.getElementById('name');
     var errName = document.getElementById('error-name-message');
 
     if (name.value.trim() === '') {      
         errName.innerHTML = "Name is required";
-        flag = false;
+        flagvalidateform = false;
     }
     else {
         errName.innerHTML = "";
     }
-
+}
+function validDatePhone() {
     var phone = document.getElementById('phone');
     var errPhone = document.getElementById
         ('error-phone-message');
@@ -101,16 +117,17 @@ function submitSubcribeForm() {
 
     if (phoneValue.trim() === '') {      
         errPhone.innerHTML = "Phone is required";
-        flag = false;
+        flagvalidateform = false;
     }
     else if (!regexPhone.test(phoneValue)){
         errPhone.innerHTML = "Invalid phone";   
-        flag = false;
+        flagvalidateform = false;
     } 
     else {
         errPhone.innerHTML = "";       
     }
-
+}
+function validDateEmail() {
     var email = document.getElementById('email');
     var errEmail = document.getElementById
         ('error-email-message');
@@ -119,16 +136,13 @@ function submitSubcribeForm() {
 
     if (emailValue.trim() === '') {      
         errEmail.innerHTML = "Email is required";
-        flag = false;
+        flagvalidateform = false;
     }
     else if (!regexEmail.test(emailValue)){
         errEmail.innerHTML = "Invalid email";   
-        flag = false;
+        flagvalidateform = false;
     } 
     else {
         errEmail.innerHTML = "";       
-    }
-    if (flag) {
-        alert("Subscribe successfully");
     }
 }
