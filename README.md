@@ -891,3 +891,41 @@ navbar.childNodes.forEach((element) => {
     });
 });
 ```
+# 🔓 Class
+## Overview
+* class Product{...}
+* constructor ()
+* method()
+* new Product()
+* class Computer extends Product{...}
+* super()
+## Tạo class
+```js
+class Product{
+    constructor(id, name, price){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+    showInfo(){
+        console.log(`${this.id}: ${this.name} - \$${this.price}`);
+    }
+}
+```
+## Tạo object từ class
+```js
+var product1 = new Product(1, "ASUS Tuf Gaming", 1200);
+product1.showInfo();
+```
+## Kế thừa class
+```js
+class Laptop extends Product{
+    constructor(id, name, price, os, ram){
+        super(id, name, price);
+        this.os = os;
+        this.ram = ram;
+    }
+}
+var laptop1 = new Laptop(2, "Macbook Air Pro", 2400, "MacOS", "16GB");
+laptop1.showInfo(); // Output: 2: Macbook Air Pro - 2400
+```
