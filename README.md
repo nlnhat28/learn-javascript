@@ -810,3 +810,30 @@ else {
 }
 ```
 # 🔓 DOM sự kiện
+## Overview
+* onclick = "function()"
+* element.onclick = function(){...}
+* element.addEventListener(event, function, useCapture)
+## Bắt sự kiện
+* Sử dụng attribute 
+```html
+onclick = "submitForm()"
+```
+* Sử dụng Js
+```js
+document.getElementById('btn-submit').onclick = function(){
+    // do something
+}
+```
+## Lắng nghe nhiều sự kiện **addEventLister()**
+```js
+var img = document.getElementById('icon-github');
+img.addEventListener("click", funcClick);
+img.addEventListener("mouseover", funcMouseOver);
+function funcClick(){
+    console.log("Click");
+}
+function funcMouseOver(){
+    console.log("MouseOver");
+}
+```
