@@ -1,14 +1,12 @@
 @import url("onlinewebfonts.com/c/164a60c2e090248befbcf32fdd5af386?family=LuloCleanOne-Bold");
 
 body{
-    background-color: black;
     background-image: url('images/background.gif');
     background-size: cover;
     background-position: fixed;
     height: 100vh;
 }
 nav {
-    background-color: transparent;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -17,13 +15,11 @@ nav {
 nav a {
     float: left;
     color: white;
-    text-align: center;
     padding: 14px 20px;
     text-decoration: none;
     font-size: 20px;
     font-family: "Consolas";
     font-weight: 700;
-    cursor: pointer;
 }
 
 nav a:hover {
@@ -38,16 +34,13 @@ nav a:hover {
 #big-title-container {
     display: block;
     height: 20vh;
-    margin: 10px;
     text-align: center;
 }
 #big-title {
     display: inline-block;
     font-family: 'Gotham', sans-serif;
-    margin: 0px;
     font-size: 100px;
     font-weight: 1000;
-    text-align: center;
     background: linear-gradient(to bottom, #ffffff, rgb(0, 255, 170));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -61,7 +54,6 @@ nav a:hover {
     padding: 20px;
 }
 .welcome-container{
-    align-content: center;
     margin-top: 50px;
     height: 60vh;
 }
@@ -75,17 +67,11 @@ nav a:hover {
     width: 100%;
 }
 #icon-github{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 25px;
     height: 25px;
     cursor: pointer;
 }
 #link-ref{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'Consolas';
     font-weight: 600;
     font-size: 18px;
