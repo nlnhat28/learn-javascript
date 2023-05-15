@@ -44,28 +44,7 @@
         <a id="link-ref" target="_blank" href="https://github.com/nlnhat28/learn-javascript">GitHub</a>
     </div>
     <script>
-        window.onload=typeWriter;
-
-        var linkPrevent = document.getElementById('prevent-default-item');
-        linkPrevent.addEventListener("click", function(event) {
-            event.preventDefault();
-            alert('Item preventDefault is clicked but link is not redirected');
-        });
-
-        var navbar = document.getElementById('navbar');
-        navbar.addEventListener("click", function(event) {
-            alert('navbar is clicked');
-        });
-        var linkStopPropa = document.getElementById('stop-propagation-item');
-        linkStopPropa.addEventListener("click", function(event) {
-            event.stopPropagation();
-            alert('Item stopPropagation is clicked, not navbar');
-        });
-        navbar.childNodes.forEach((element) => {
-            element.addEventListener("click", function(event){
-                event.stopPropagation();
-            });
-        });
+        window.onload=windowLoad;
     </script>
 </body>
 </html>

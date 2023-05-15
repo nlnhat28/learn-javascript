@@ -2,7 +2,11 @@ var i = 0;
 var title = 'We don\'t learn from success but from failure!';
 var speed = 100;
 
-function typeWriter() {
+function windowLoad(){
+    typeWriter();
+    initComponents();
+}
+async function typeWriter() {
     if (i < title.length) {
         if (title.charAt(i) === "\n") {
             document.getElementById("welcome-title").innerHTML += "<br>";
@@ -11,8 +15,30 @@ function typeWriter() {
             document.getElementById("welcome-title").innerHTML += title.charAt(i);
         }
         i++;
-        setTimeout(typeWriter, speed);
+        await setTimeout(typeWriter, speed);
     }
+}
+function initComponents() {
+    var linkPrevent = document.getElementById('prevent-default-item');
+        linkPrevent.addEventListener("click", function(event) {
+            event.preventDefault();
+            alert('Item preventDefault is clicked but link is not redirected');
+    });
+
+    var navbar = document.getElementById('navbar');
+    navbar.addEventListener("click", function() {
+        alert('navbar is clicked');
+    });
+    var linkStopPropa = document.getElementById('stop-propagation-item');
+    linkStopPropa.addEventListener("click", function(event) {
+        event.stopPropagation();
+        alert('Item stopPropagation is clicked, not navbar');
+    });
+    navbar.childNodes.forEach((element) => {
+        element.addEventListener("click", function(event){
+        event.stopPropagation();
+        });
+    });
 }
 
 function sleep(ms) {
