@@ -10,18 +10,36 @@
     <title>Learn Js</title>
 </head>
 <body>
-    <div id="header-page">
-        <img id="icon-js" src="images/icon-js-1.png" alt="icon-js" onclick="expandTitleJavascript()">
-    </div>
+    <nav>
+        <img id="icon-js" src="images/icon-js-1.png" alt="icon-js" onmouseover="changeIconJs2()" onmouseleave="changeIconJs1()">
+        <a href="#">Home</a>
+        <a href="https://xuanthulab.net/javascript/" target="_blank">Xuanthulab</a>
+        <a href="https://www.w3schools.com/js/default.asp" target="_blank">W3School</a>
+        <a onclick="openFeedbackForm()">Feedback</a>
+    </nav>
+    <dialog id="dialog-feedback">
+        <form>
+            <label class='text-bold' for="name">Name : </label>
+			<input class='text-normal' type="text" id="tel" name="name" placeholder="Your name"><br><br>
+            <label class='text-bold' for="phone">Phone: </label>
+			<input class='text-normal' type="text" id="tel" name="phone" placeholder="088 888 8888"><br><br>
+			<label class='text-bold'  for="email">Email: </label>
+			<input class='text-normal' type="email" id="email" name="email" placeholder="example@gmail.com"><br><br>
+        </form>
+        <div id="diaglog-footer">
+            <button id='btn-blue'>Submit</button>
+            <button id='btn-red'onclick="closeFeedbackForm()">Close</button>
+        </div>
+    </dialog>
     <div id = "big-title-container">
-        <p id="big-title">JAVASCRIPT</p>
+        <p id="big-title" onclick="expandTitleJavascript()">JAVASCRIPT</p>
     </div>
     <div class="welcome-container">
         <h1 id="welcome-title"></h1>
     </div>
     <div id="github-ref">
         <img id="icon-github" src="images/icon-github.png" alt="icon-github">
-        <a id="link-ref" target="_blank" href="https://github.com/nlnhat28/learn-javascript">GitHub for more</a>
+        <a id="link-ref" target="_blank" href="https://github.com/nlnhat28/learn-javascript">GitHub</a>
     </div>
     <script>
         window.onload=typeWriter
