@@ -54,8 +54,3 @@ function openFeedbackForm(){
 function closeFeedbackForm(){
     document.getElementById('dialog-feedback').close();
 }
-var linkPrevent = document.getElementById('prevent-default');
-linkPrevent.addEventListener("click", function(event) {
-    event.preventDefault();
-    alert('Link is clicked but is not redirected');
-});

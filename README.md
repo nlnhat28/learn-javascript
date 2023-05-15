@@ -858,6 +858,7 @@ function funcMouseOver(){
     console.log("Mouse is over");
 }
 ```
+## Xoá sự kiện **removeEventLister()**
 ```js
 var img = document.getElementById('icon-github');
 img.addEventListener("click", funcClick);
@@ -867,13 +868,26 @@ function funcClick(){
     console.log("Removed click event");
 }
 ```
-## Listerner khi bắt các sự kiện
+## preventDefault(), stopPropagation()
 * Ngăn sự kiện **preventDefault()**
+Ví dụ: Ngăn sự kiện chuyển hướng sang **href**
 ```js
-var linkPrevent = document.getElementById('icon-js');
+var linkPrevent = document.getElementById('prevent-default');
 linkPrevent.addEventListener("click", function(event) => {
     event.preventDefault();
-    alert('Link is clinked but is not redirected')
+    alert('Link is clicked but is not redirected')
 });
 ```
 * Dừng lan truyền sự kiện **stopPropagation()**
+Ví dụ: Ngăn các phần tử trong **navbar** nhận sự kiện click của **navbar**
+```js
+var navbar = document.getElementById('navbar');
+navbar.addEventListener("click", function(event) {
+    alert('navbar is clicked');
+});
+navbar.childNodes.forEach((element) => {
+    element.addEventListener("click", function(event){
+        event.stopPropagation();
+    });
+});
+```
