@@ -15,22 +15,25 @@
         <a href="#">Home</a>
         <a href="https://xuanthulab.net/javascript/" target="_blank">Xuanthulab</a>
         <a href="https://www.w3schools.com/js/default.asp" target="_blank">W3School</a>
-        <a onclick="openFeedbackForm()">Feedback</a>
+        <a onclick="openSubcribeForm()">Subcribe</a>
         <a id="prevent-default-item" href="https://google.com/" target="_blank">What's preventDefault()?</a>
         <a id="stop-propagation-item">What's stopPropagation()?</a>
     </nav>
-    <dialog id="dialog-feedback">
-        <form>
+    <dialog id="dialog-subcribe">
+        <form id = 'form-subcribe'> 
             <label class='text-bold' for="name">Name : </label>
-			<input class='text-normal' type="text" id="tel" name="name" placeholder="Your name"><br><br>
+			<input class='subcribe-input' type="text" id="name" name="name" placeholder="Your name">
+            <div id = "error-name-message" class="error-input-message"></div><br>
             <label class='text-bold' for="phone">Phone: </label>
-			<input class='text-normal' type="text" id="tel" name="phone" placeholder="088 888 8888"><br><br>
+			<input class='subcribe-input' type="tel" id="phone" name="phone" placeholder="088 888 8888">
+            <div id = "error-phone-message" class="error-input-message"></div><br>
 			<label class='text-bold'  for="email">Email: </label>
-			<input class='text-normal' type="email" id="email" name="email" placeholder="example@gmail.com"><br><br>
+			<input class='subcribe-input' type="email" id="email" name="email" placeholder="example@gmail.com">
+            <div id = "error-email-message" class="error-input-message"></div><br>
         </form>
         <div id="dialog-footer">
-            <button id='btn-blue'>Submit</button>
-            <button id='btn-red'onclick="closeFeedbackForm()">Close</button>
+            <button id='btn-blue' onclick="submitSubcribeForm()">Subcribe</button>
+            <button id='btn-red'onclick="closeSubcribeForm()">Close</button>
         </div>
     </dialog>
     <div id = "big-title-container">

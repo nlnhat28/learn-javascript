@@ -20,6 +20,7 @@ nav a {
     font-size: 20px;
     font-family: "Consolas";
     font-weight: 700;
+    cursor: pointer;
 }
 
 nav a:hover {
@@ -81,21 +82,30 @@ nav a:hover {
 #link-ref:hover {
     color: rgb(0, 255, 170);
 }
-#dialog-feedback{
+#dialog-subcribe{
     border-radius: 20px;
     border-color: transparent;
-    padding: 20px 20px 15px 20px;
+    padding: 30px 30px 25px 30px;
 }
-.text-normal{
+.subcribe-input{
     font-family: 'Consolas';
-    font-weight: 200;
-    font-size: 18px;
+    font-weight: 100;
+    font-size: 22px;
     color: rgb(0, 0, 0);
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.error-input-message{
+    font-family: "Consolas";
+    color: #ff0000;
+    font-size: 18px;
+    margin-left: 85px;
 }
 .text-bold{
     font-family: 'Consolas';
     font-weight: 600;
-    font-size: 18px;
+    font-size: 22px;
     color: rgb(0, 0, 0);
 }
 #btn-red{
@@ -103,9 +113,9 @@ nav a:hover {
     color: #ffffff;
     font-family: "Roboto";
     font-weight: 500;
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 20px;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 25px;
     border-color: transparent;
     cursor: pointer;
     float: right;
@@ -119,9 +129,9 @@ nav a:hover {
     color: #ffffff;
     font-family: "Roboto";
     font-weight: 500;
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 20px;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 25px;
     border-color: transparent;
     cursor: pointer;
     float: right;

@@ -74,9 +74,61 @@ function expandTitleJavascript() {
         bigTitleContainer.removeChild(bigTitleContainer.lastChild);
     }
 }
-function openFeedbackForm(){
-    document.getElementById('dialog-feedback').showModal();
+function openSubcribeForm(){
+    document.getElementById('dialog-subcribe').showModal();
 }
-function closeFeedbackForm(){
-    document.getElementById('dialog-feedback').close();
+function closeSubcribeForm(){
+    document.getElementById('dialog-subcribe').close();
+}
+function submitSubcribeForm() {
+    var flag = true;
+    var name = document.getElementById('name');
+    var errName = document.getElementById('error-name-message');
+
+    if (name.value.trim() === '') {      
+        errName.innerHTML = "Name is required";
+        flag = false;
+    }
+    else {
+        errName.innerHTML = "";
+    }
+
+    var phone = document.getElementById('phone');
+    var errPhone = document.getElementById
+        ('error-phone-message');
+    var phoneValue = phone.value;
+    const regexPhone = /^\d{10}$/;
+
+    if (phoneValue.trim() === '') {      
+        errPhone.innerHTML = "Phone is required";
+        flag = false;
+    }
+    else if (!regexPhone.test(phoneValue)){
+        errPhone.innerHTML = "Invalid phone";   
+        flag = false;
+    } 
+    else {
+        errPhone.innerHTML = "";       
+    }
+
+    var email = document.getElementById('email');
+    var errEmail = document.getElementById
+        ('error-email-message');
+    var emailValue = email.value;
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailValue.trim() === '') {      
+        errEmail.innerHTML = "Email is required";
+        flag = false;
+    }
+    else if (!regexEmail.test(emailValue)){
+        errEmail.innerHTML = "Invalid email";   
+        flag = false;
+    } 
+    else {
+        errEmail.innerHTML = "";       
+    }
+    if (flag) {
+        alert("Subscribe successfully");
+    }
 }
