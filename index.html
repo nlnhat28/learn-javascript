@@ -10,12 +10,14 @@
     <title>Learn Js</title>
 </head>
 <body>
-    <nav>
+    <nav id="navbar">
         <img id="icon-js" src="images/icon-js-1.png" alt="icon-js" onmouseover="changeIconJs2()" onmouseleave="changeIconJs1()">
         <a href="#">Home</a>
         <a href="https://xuanthulab.net/javascript/" target="_blank">Xuanthulab</a>
         <a href="https://www.w3schools.com/js/default.asp" target="_blank">W3School</a>
         <a onclick="openFeedbackForm()">Feedback</a>
+        <a id="prevent-default-item" href="https://google.com/" target="_blank">What's preventDefault()?</a>
+        <a id="stop-propagation-item">What's stopPropagation()?</a>
     </nav>
     <dialog id="dialog-feedback">
         <form>
@@ -26,13 +28,13 @@
 			<label class='text-bold'  for="email">Email: </label>
 			<input class='text-normal' type="email" id="email" name="email" placeholder="example@gmail.com"><br><br>
         </form>
-        <div id="diaglog-footer">
+        <div id="dialog-footer">
             <button id='btn-blue'>Submit</button>
             <button id='btn-red'onclick="closeFeedbackForm()">Close</button>
         </div>
     </dialog>
     <div id = "big-title-container">
-        <p id="big-title" onclick="expandTitleJavascript()">JAVASCRIPT</p>
+        <label id="big-title" onclick="expandTitleJavascript()">JAVASCRIPT</label>
     </div>
     <div class="welcome-container">
         <h1 id="welcome-title"></h1>
@@ -42,7 +44,28 @@
         <a id="link-ref" target="_blank" href="https://github.com/nlnhat28/learn-javascript">GitHub</a>
     </div>
     <script>
-        window.onload=typeWriter
+        window.onload=typeWriter;
+
+        var linkPrevent = document.getElementById('prevent-default-item');
+        linkPrevent.addEventListener("click", function(event) {
+            event.preventDefault();
+            alert('Item preventDefault is clicked but link is not redirected');
+        });
+
+        var navbar = document.getElementById('navbar');
+        navbar.addEventListener("click", function(event) {
+            alert('navbar is clicked');
+        });
+        var linkStopPropa = document.getElementById('stop-propagation-item');
+        linkStopPropa.addEventListener("click", function(event) {
+            event.stopPropagation();
+            alert('Item stopPropagation is clicked, not navbar');
+        });
+        navbar.childNodes.forEach((element) => {
+            element.addEventListener("click", function(event){
+                event.stopPropagation();
+            });
+        });
     </script>
 </body>
 </html>

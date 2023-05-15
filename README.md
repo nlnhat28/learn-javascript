@@ -309,7 +309,8 @@ Chạy ngay không cần gán
 * array.slice()
 * array.forEach
 * array.map()
-* arrar.filter()
+* array.reduce()
+* array.filter()
 * array.some()
 * array.every()
 * array.includes()
@@ -381,7 +382,10 @@ person.forEach((i) => console.log(i)); // Output: Empty
 console.log(`${person['name']}: ${person['birthYear']}`); // Output: Js: 1995
 ```
 ## Duyệt mảng với map()
-Phương thức **map(function())** duyệt qua từng phần tử và thực hiện **function()**
+Phương thức **map(function())** 
+* Duyệt qua từng phần tử và thực hiện **function()**
+* Trả về 1 mảng
+Ví dụ tạo 1 mảng mới có thêm key **rank** dựa trên **score**:
 ```js
 var courses = [
     {
@@ -424,6 +428,20 @@ var newCourses = courses.map((course)=> {
     }
 });
 console.log(newCourses);
+```
+## Phương thức reduce()
+Phương thức **reduce(callback(accumulator, item), initialValue)** 
+* Duyệt qua từng phần tử và thực hiện **callback()**
+* **accumulator** : giá trị tích luỹ sau mỗi lần tự hiện **callback()**
+* **item** : giá trị hiện tại của mảng được đưa vào **callback()**
+* Trả về 1 giá trị duy nhất
+Ví dụ gộp mảng2 chiều thành mảng 1 chiều:
+```js
+var langs = [['Html', 'Css', 'Javascript'],['C++', 'C#', 'Java'],['Python', 'Php']];
+var array1d = langs.reduce((accumArray, subArray) => {
+    return accumArray.concat(subArray);
+});
+console.log(array1d);
 ```
 ## Phương thức filter()
 ```js
@@ -814,6 +832,9 @@ else {
 * onclick = "function()"
 * element.onclick = function(){...}
 * element.addEventListener(event, function, useCapture)
+* element.removeEventLister(event, function)
+* preventDefault()
+* stopPropagation()
 ## Bắt sự kiện
 * Sử dụng attribute 
 ```html
@@ -831,9 +852,28 @@ var img = document.getElementById('icon-github');
 img.addEventListener("click", funcClick);
 img.addEventListener("mouseover", funcMouseOver);
 function funcClick(){
-    console.log("Click");
+    console.log("Clicked");
 }
 function funcMouseOver(){
-    console.log("MouseOver");
+    console.log("Mouse is over");
 }
 ```
+```js
+var img = document.getElementById('icon-github');
+img.addEventListener("click", funcClick);
+function funcClick(){
+    console.log("Clicked");
+    img.removeEventListener("click", funcClick);
+    console.log("Removed click event");
+}
+```
+## Listerner khi bắt các sự kiện
+* Ngăn sự kiện **preventDefault()**
+```js
+var linkPrevent = document.getElementById('icon-js');
+linkPrevent.addEventListener("click", function(event) => {
+    event.preventDefault();
+    alert('Link is clinked but is not redirected')
+});
+```
+* Dừng lan truyền sự kiện **stopPropagation()**

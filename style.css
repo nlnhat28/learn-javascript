@@ -37,19 +37,17 @@ nav a:hover {
 }
 #big-title-container {
     display: block;
-    justify-content: center;
-    align-items: center;
     height: 20vh;
     margin: 10px;
+    text-align: center;
 }
 #big-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     font-family: 'Gotham', sans-serif;
     margin: 0px;
     font-size: 100px;
     font-weight: 1000;
+    text-align: center;
     background: linear-gradient(to bottom, #ffffff, rgb(0, 255, 170));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -144,4 +142,7 @@ nav a:hover {
 }
 #btn-blue:hover{
     background-color: rgb(0, 81, 187);
+}
+#dialog-footer{
+    margin-top: 10px;
 }

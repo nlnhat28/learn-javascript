@@ -2,7 +2,7 @@ var i = 0;
 var title = 'We don\'t learn from success but from failure!';
 var speed = 100;
 
-async function typeWriter() {
+function typeWriter() {
     if (i < title.length) {
         if (title.charAt(i) === "\n") {
             document.getElementById("welcome-title").innerHTML += "<br>";
@@ -54,3 +54,8 @@ function openFeedbackForm(){
 function closeFeedbackForm(){
     document.getElementById('dialog-feedback').close();
 }
+var linkPrevent = document.getElementById('prevent-default');
+linkPrevent.addEventListener("click", function(event) {
+    event.preventDefault();
+    alert('Link is clicked but is not redirected');
+});
