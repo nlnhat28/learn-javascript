@@ -382,10 +382,10 @@ person.forEach((i) => console.log(i)); // Output: Empty
 console.log(`${person['name']}: ${person['birthYear']}`); // Output: Js: 1995
 ```
 ## Duyệt mảng với map()
-Phương thức **map(function())** 
-* Duyệt qua từng phần tử và thực hiện **function()**
+Phương thức `map(function())` 
+* Duyệt qua từng phần tử và thực hiện `function()`
 * Trả về 1 mảng
-Ví dụ tạo 1 mảng mới có thêm key **rank** dựa trên **score**:
+Ví dụ tạo 1 mảng mới có thêm key `rank` dựa trên `score`:
 ```js
 var courses = [
     {
@@ -430,10 +430,10 @@ var newCourses = courses.map((course)=> {
 console.log(newCourses);
 ```
 ## Phương thức reduce()
-Phương thức **reduce(callback(accumulator, item), initialValue)** 
-* Duyệt qua từng phần tử và thực hiện **callback()**
-* **accumulator** : giá trị tích luỹ sau mỗi lần tự hiện **callback()**
-* **item** : giá trị hiện tại của mảng được đưa vào **callback()**
+Phương thức `reduce(callback(accumulator, item), initialValue)` 
+* Duyệt qua từng phần tử và thực hiện `callback()`
+* `accumulator` : giá trị tích luỹ sau mỗi lần tự hiện `callback()`
+* `item` : giá trị hiện tại của mảng được đưa vào `callback()`
 * Trả về 1 giá trị duy nhất
 Ví dụ gộp mảng2 chiều thành mảng 1 chiều:
 ```js
@@ -637,7 +637,7 @@ console.log('unix:',date.getTime()); // Output: 959482920000
 * Dùng để thay đổi nội dung phần tử
 ## Đối tượng Document
 * Là đối tượng của DOM
-* Từ **document** có thể truy cập mọi phần tử của DOM
+* Từ `document` có thể truy cập mọi phần tử của DOM
 ```js
 document.body.innerHTML = "Some text";
 ```
@@ -869,8 +869,8 @@ function funcClick(){
 }
 ```
 ## preventDefault(), stopPropagation()
-* Ngăn sự kiện **preventDefault()**
-Ví dụ: Ngăn sự kiện chuyển hướng sang **href**
+### Ngăn sự kiện **preventDefault()**
+Ví dụ: Ngăn sự kiện chuyển hướng sang `href`
 ```js
 var linkPrevent = document.getElementById('prevent-default');
 linkPrevent.addEventListener("click", function(event) => {
@@ -878,8 +878,8 @@ linkPrevent.addEventListener("click", function(event) => {
     alert('Link is clicked but is not redirected')
 });
 ```
-* Dừng lan truyền sự kiện **stopPropagation()**
-Ví dụ: Ngăn các phần tử trong **navbar** nhận sự kiện click của **navbar**
+### Dừng lan truyền sự kiện **stopPropagation()**
+Ví dụ: Ngăn các phần tử trong `navbar` nhận sự kiện click của `navbar`
 ```js
 var navbar = document.getElementById('navbar');
 navbar.addEventListener("click", function(event) {
