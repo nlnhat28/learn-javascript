@@ -588,25 +588,25 @@ let date = new Date('May 28, 2000 10:02:00');
 console.log(date); // Output: Sun May 28 2000 10:02:00 GMT+0700
 ```
 ## Các phương thức
-* Lấy ngày trong tháng (getDate())
+* Lấy ngày trong tháng `(getDate())`
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
 console.log('date:',date.getDate()); // Output: 28
 ```
-* Lấy thứ trong tuần (getDay())
+* Lấy thứ trong tuần `(getDay())`
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
 console.log('day:',date.getDay()); // Output: 0
 ```
-* Lấy năm (getFullYear())
+* Lấy năm `(getFullYear())`
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
 console.log('year:',date.getFullYear()); // Output: 2000
 ```
-* Lấy thời gian Unix (getTime())
+* Lấy thời gian Unix `(getTime())`
 ```js
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
@@ -665,43 +665,43 @@ arr[0].innerHTML = "This is the a element of tag";
 ```
 ## Các thuộc tính của HtmlElement trong DOM
 ### childNodes
-element.childNodes : trả về mảng các phần tử con
+`element.childNodes` : trả về mảng các phần tử con
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].childNodes); // Output: NodeList(3) [text, h1#welcome-title, text]
 ```
 ### firstChild
-element.firstChild : trả về phần tử con đầu tiên
+`element.firstChild` : trả về phần tử con đầu tiên
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].firstChild); // Output: #text
 ```
 ### lastChild
-element.lastChild : trả về phần tử con cuối cùng
+`element.lastChild` : trả về phần tử con cuối cùng
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].lastChild); // Output: #text
 ```
 ### hasChildNodes
-element.hasChildNodes : kiểm tra phần tử có phần tử con hay không
+`element.hasChildNodes` : kiểm tra phần tử có phần tử con hay không
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].hasChildNodes()); // Output: #true
 ```
 ### nextSibling
-element.nextSibling : trả về phần tử tiếp theo cùng cấp
+`element.nextSibling` : trả về phần tử tiếp theo cùng cấp
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].nextSibling); // Output: #text
 ```
 ### previousSibling
-element.previousSibling : trả về phần tử trước đó cùng cấp
+`element.previousSibling` : trả về phần tử trước đó cùng cấp
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].previousSibling); // Output: #text
 ```
 ### parentNode
-element.parentNode : trả về phần tử cha
+`element.parentNode` : trả về phần tử cha
 ```js
 let arr = document.getElementsByClassName('welcome-container');
 console.log(arr[0].parentNode); // Output: <body>...</body>
