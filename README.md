@@ -532,8 +532,8 @@ var result = courses.every((c)=>{
 })
 console.log(result) // Output: false
 ```
-## Phương thức every()
-Kiểm tra tất cả phần tử có thoả mãn điều kiện không
+## Phương thức includes()
+Kiểm tra phần tử có trong mảng không
 ```js
 var courses = ['Html', 'Css', 'Javascript']
 var result = courses.includes('Css');
@@ -611,6 +611,12 @@ console.log('year:',date.getFullYear()); // Output: 2000
 let date = new Date('May 28, 2000 10:02:00');
 console.log('date:',date);
 console.log('unix:',date.getTime()); // Output: 959482920000
+```
+* Set năm `(setFullYear())`
+```js
+let date = new Date();
+date.setFullYear(1999);
+console.log(date.getFullYear()); // Output: 1999
 ```
 # 🔓 DOM cơ bản
 * Document Object Model
@@ -929,3 +935,68 @@ class Laptop extends Product{
 var laptop1 = new Laptop(2, "Macbook Air Pro", 2400, "MacOS", "16GB");
 laptop1.showInfo(); // Output: 2: Macbook Air Pro - 2400
 ```
+
+# 🔓 Promise
+## Overview
+* Producing Code
+* Consuming code
+## Syntax
+```js
+let myPromise = new Promise(function(myResolve, myReject) {
+// "Producing Code" (May take some time)
+
+  myResolve(); // when successful
+  myReject();  // when error
+});
+
+// "Consuming Code" (Must wait for a fulfilled Promise)
+myPromise.then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+```
+## Example
+* Ex1:
+```js
+function myDisplayer(value) {
+  document.getElementById("demo").innerHTML = value;
+}
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+  
+// The producing code (this may take some time)
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+```
+* Ex2: Wait for a file
+```js
+let myPromise = new Promise(function(myResolve, myReject) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "mycar.htm");
+  req.onload = function() {
+    if (req.status == 200) {
+      myResolve(req.response);
+    } else {
+      myReject("File not Found");
+    }
+  };
+  req.send();
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+```
+## Reference
+* [W3School](https://www.w3schools.com/js/js_promise.asp)
